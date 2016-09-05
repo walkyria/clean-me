@@ -6,7 +6,7 @@ We'd like you to spend some time going through this code and refactoring it. The
 
 To complete the exercise, please fork this repository and work in your fork. Once you've completed your rework create a Pull Request back to this repository so we can view the diff.   
 
-You are at liberty to do as much refactoring as you see fit, we only ask that you don't include any frameworks or dependancies via composer. There should be no reason to do that. 
+You are at liberty to do as much refactoring as you see fit, we only ask that you don't include any frameworks or dependancies via composer. That would make the diff unreadable, but feel free to assume there is one present, just make sure you note that in the comments. 
 
 
 Good luck!
