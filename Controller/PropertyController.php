@@ -3,25 +3,19 @@
 namespace cleanMe\Controller;
 
 /* */
+use cleanMe\Repository\PropertyRepository;
+
 class PropertyController
 {
+    /**
+     * @var PropertyRepository
+     */
+    protected $propertyRepository;
 
-    /* I did not see an obvious connection between user and properties so i separated them*/
-    public function getProperties($pets = false){
-
-        if($pets){
-            $acceptsPets = "Yes";
-        }else{
-            $acceptsPets = "No";
-        }
-
-        return [
-            ['7439', 'Craster Reach', '1', 'Craster', 'no smoking', "pets $acceptsPets"],
-            ['2105', 'Richard House', '5', 'chester', 'smoking', "pets $acceptsPets"]
-        ];
+    public function __construct(PropertyRepository $propertyRepository) //dependency injection to make code testable.
+    {
+        $this->propertyRepository = $propertyRepository;
     }
-
-
     public function displayProperties(){
 
         $properties = $this->getProperties(true);

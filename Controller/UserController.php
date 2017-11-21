@@ -7,23 +7,40 @@ use cleanMe\Repository\UserRepository;
 
 class UserController
 {
+    /**
+     * @var UserRepository
+     */
     protected $userRepo;
 
-    public function __construct(UserRepository $userRepo) //dependency injection to make code testable
+    public function __construct(UserRepository $userRepo) //dependency injection to make code testable.
     {
         $this->userRepo = $userRepo;
     }
 
     /* This function could receive Request parameters from a form, validate them and then create new User */
-    public function newUser(){
+    public function newUser($firstName, $lastName){
+
+        if(empty($firstName)){
+            return new \HttpResponseException("First Name required");
+        }
+
+        if(empty($lastName)){
+           return new \HttpResponseException("Last name required");
+        }
 
         $user = new User();
-        $user->setFirstName("Peter");
-        $user->setLastName("Johnson");
-        $this->userRepo->newUser($user);
+        $user->setFirstName($firstName);
+        $user->setLastName($lastName);
+        $newUser = $this->userRepo->newUser($user);
+        
+        if(!$newUser){
+            return header("Failure",true,500);
+        }
+
+        return header("Success",true,200);
     }
 
-    /* This function can be improved by using html templates instead of echoing the values */
+    /* This function can be improved by using html templates (views) instead of echoing the values */
     public function getUsers(){
 
         $users = $this->userRepo->getUsers();
