@@ -14,6 +14,7 @@ class UserController
         $this->userRepo = $userRepo;
     }
 
+    /* This function could receive Request parameters from a form, validate them and then create new User */
     public function newUser(){
 
         $user = new User();
@@ -22,6 +23,7 @@ class UserController
         $this->userRepo->newUser($user);
     }
 
+    /* This function can be improved by using html templates instead of echoing the values */
     public function getUsers(){
 
         $users = $this->userRepo->getUsers();

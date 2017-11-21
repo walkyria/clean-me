@@ -1,17 +1,12 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: walkyria
- * Date: 21/11/17
- * Time: 20:29
- */
 
 namespace cleanMe\Controller;
 
-
+/* */
 class PropertyController
 {
 
+    /* I did not see an obvious connection between user and properties so i separated them*/
     public function getProperties($pets = false){
 
         if($pets){
@@ -25,6 +20,7 @@ class PropertyController
             ['2105', 'Richard House', '5', 'chester', 'smoking', "pets $acceptsPets"]
         ];
     }
+
 
     public function displayProperties(){
 
