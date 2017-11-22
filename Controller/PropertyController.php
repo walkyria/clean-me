@@ -2,8 +2,9 @@
 
 namespace cleanMe\Controller;
 
-/* */
+
 use cleanMe\Repository\PropertyRepository;
+use cleanMe\View\PropertyView;
 
 class PropertyController
 {
@@ -12,19 +13,23 @@ class PropertyController
      */
     protected $propertyRepository;
 
-    public function __construct(PropertyRepository $propertyRepository) //dependency injection to make code testable.
-    {
+    /**
+     * @var PropertyView
+     */
+    protected $propertyView;
+
+    public function __construct(
+        PropertyRepository $propertyRepository,
+        PropertyView $propertyView
+    ) {
         $this->propertyRepository = $propertyRepository;
+        $this->propertyView       = $propertyView;
     }
 
-    public function displayProperties()
+    public function getProperties()
     {
-
-        $properties = $this->getProperties(true);
-
-        foreach ($properties as $property) {
-            echo $property[1] . ", sleeps $property[2] <br />";
-        }
+        $properties = $this->propertyRepository->getProperties();
+        $this->propertyView->displayProperties($properties);
     }
 
 }

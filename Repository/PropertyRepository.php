@@ -5,7 +5,9 @@ namespace cleanMe\Repository;
 class PropertyRepository extends MyRepository
 {
 
-    /* I did not see an obvious connection between user and properties so i separated them */
+    /* I did not see an obvious connection between user and properties so i separated them
+    Ideally this data would come from the database
+    */
     public function getProperties($pets = false)
     {
 
