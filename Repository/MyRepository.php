@@ -4,7 +4,7 @@ namespace cleanMe\Repository;
 
 use cleanMe\Db\Connection;
 
-class AbstractRepository
+class MyRepository
 {
 
     public function select($sql){
