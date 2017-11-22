@@ -16,7 +16,9 @@ class PropertyController
     {
         $this->propertyRepository = $propertyRepository;
     }
-    public function displayProperties(){
+
+    public function displayProperties()
+    {
 
         $properties = $this->getProperties(true);
 

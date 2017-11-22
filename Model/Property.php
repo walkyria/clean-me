@@ -101,7 +101,7 @@ class Property
     /**
      * @return bool
      */
-    public function isSmoking()
+    public function getSmoking()
     {
         return $this->smoking;
     }
@@ -117,7 +117,7 @@ class Property
     /**
      * @return bool
      */
-    public function isPets()
+    public function getPets()
     {
         return $this->pets;
     }
