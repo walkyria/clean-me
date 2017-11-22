@@ -5,7 +5,7 @@ namespace cleanMe\Repository;
 use cleanMe\Db\Connection;
 use cleanMe\Model\User;
 
-class UserRepository extends AbstractRepository
+class UserRepository extends MyRepository
 {
 
     public function getUsers(){

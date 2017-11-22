@@ -2,7 +2,7 @@
 
 namespace cleanMe\Repository;
 
-class PropertyRepository extends AbstractRepository
+class PropertyRepository extends MyRepository
 {
 
     /* I did not see an obvious connection between user and properties so i separated them */
